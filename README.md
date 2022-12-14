@@ -45,6 +45,11 @@ pall This is the end of our program. Monty is awesome!$
 3. [Stack operations](https://www.digitalocean.com/community/tutorials/stack-in-c)
 4. [Queue operations](https://www.edureka.co/blog/queue-in-c/)
 
+## Compilation & Output
+* The code must be compiled this way: `$ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty`
+* Any output must be printed on `stdout`
+* Any error message must be printed on `stderr`. [Here is a link to a GitHub repository](https://github.com/sickill/stderred) illustrating how to make sure your errors are printed on `stderr`
+
 ## Tasks
 ### 0. push, pall
 Implement the `push` and `pall` opcodes.
