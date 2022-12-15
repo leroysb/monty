@@ -62,19 +62,21 @@ help global;
 
 extern int status;
 
-/* utils.c */
+/* utils2 */
 int is_digit(char *string);
 int isnumber(char *str);
+
+/* utils */
 stack_t *queue_node(stack_t **stack, const int n);
 stack_t *add_node(stack_t **stack, const int n);
 size_t print_stack(const stack_t *stack);
 void free_stack(stack_t *stack);
-void opcode(stack_t **stack, char *str, unsigned int count);
+void opcode(stack_t **stack, char *str, unsigned int lnum);
 
-void push(stack_t **stack, unsigned int count);
-void pall(stack_t **stack, unsigned int count);
-void pint(stack_t **stack, unsigned int count);
-void pop(stack_t **stack, unsigned int count);
-void swap(stack_t **stack, unsigned int count);
+void push(stack_t **stack, unsigned int lnum);
+void pall(stack_t **stack, unsigned int lnum);
+void pint(stack_t **stack, unsigned int lnum);
+void pop(stack_t **stack, unsigned int lnum);
+void swap(stack_t **stack, unsigned int lnum);
 
 #endif /* MONTY_H */

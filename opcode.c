@@ -4,11 +4,11 @@
  * opcode - runs builtins
  * @stack: stack given by main
  * @str: string to compare
- * @count: number of lines
+ * @lnum: line number
  *
  * Return: nothing
  */
-void opcode(stack_t **stack, char *str, unsigned int count)
+void opcode(stack_t **stack, char *str, unsigned int lnum)
 {
 	int i = 0;
 
@@ -29,11 +29,11 @@ void opcode(stack_t **stack, char *str, unsigned int count)
 	{
 		if (strcmp(op[i].opcode, str) == 0)
 		{
-			op[i].f(stack, count);
+			op[i].f(stack, lnum);
 			return; /* if we found a match, run the function */
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", count, str);
+	fprintf(stderr, "L%d: unknown instruction %s\n", lnum, str);
 	status = EXIT_FAILURE;
 }

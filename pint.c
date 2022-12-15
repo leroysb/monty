@@ -1,17 +1,17 @@
 #include "monty.h"
 
 /**
- * pint - print the top data
+ * pint - print value at the top of the stack
  * @stack: stack given by main
- * @count: number of lines
+ * @lnum: line number
  *
  * Return: void
  */
-void pint(stack_t **stack, unsigned int count)
+void pint(stack_t **stack, unsigned int lnum)
 {
 	if (!stack || !(*stack))
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", count);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", lnum);
 		status = EXIT_FAILURE;
 		return;
 	}

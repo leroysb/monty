@@ -3,17 +3,17 @@
 /**
 * pop - pops top element
 * @stack: stack given by main
-* @count: line number for error messages
+* @lnum: line number
 *
 * Return: void
 */
-void pop(stack_t **stack, unsigned int count)
+void pop(stack_t **stack, unsigned int lnum)
 {
 	stack_t *tmp = NULL;
 
 	if (!stack || !*stack)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", count);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", lnum);
 		status = EXIT_FAILURE;
 		return;
 	}

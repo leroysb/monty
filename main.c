@@ -23,7 +23,7 @@ void file_error(char *argv)
 	exit(EXIT_FAILURE);
 }
 
-int status;
+int status = 0;
 int getline(char **lineptr, size_t *n, FILE *stream);
 
 /**
@@ -42,7 +42,6 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	unsigned int count = 1;
 
-	status = 0;
 	global.data_struct = 1;
 	if (argc != 2)
 		error_usage();
