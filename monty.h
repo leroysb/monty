@@ -41,8 +41,6 @@ typedef struct instruction_s
 		{"push", push},\
 		{"pall", pall},\
 		{"pint", pint},\
-		{"pop", pop},\
-		{"swap", swap},\
 		{NULL, NULL} \
 	}
 
@@ -76,7 +74,7 @@ void opcode(stack_t **stack, char *str, unsigned int lnum);
 void push(stack_t **stack, unsigned int lnum);
 void pall(stack_t **stack, unsigned int lnum);
 void pint(stack_t **stack, unsigned int lnum);
-void pop(stack_t **stack, unsigned int lnum);
-void swap(stack_t **stack, unsigned int lnum);
+/*void pop(stack_t **stack, unsigned int lnum);
+  void swap(stack_t **stack, unsigned int lnum);*/
 
 #endif /* MONTY_H */
