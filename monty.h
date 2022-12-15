@@ -1,6 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,4 +37,38 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#endif /*MONTY_H
+#define INSTRUCTIONS { \
+		{"push", push},\
+		{"pall", pall},\
+		{NULL, NULL} \
+	}
+
+/**
+* struct help - argument for the current opcode
+* @data_struct: stack mode, stack (default) and queue
+* @argument: the arguments of the string
+*
+* Description: global structure used to pass data around the functions easily
+*/
+typedef struct help
+{
+	int data_struct;
+	char *argument;
+} help;
+help global;
+
+extern int status;
+
+/* utils.c */
+int is_digit(char *string);
+int isnumber(char *str);
+stack_t *queue_node(stack_t **stack, const int n);
+stack_t *add_node(stack_t **stack, const int n);
+size_t print_stack(const stack_t *stack);
+void free_stack(stack_t *stack);
+void opcode(stack_t **stack, char *str, unsigned int count);
+
+void push(stack_t **stack, unsigned int count);
+void pall(stack_t **stack, unsigned int count);
+
+#endif /* MONTY_H */
