@@ -24,7 +24,7 @@ void file_error(char *argv)
 }
 
 int status = 0;
-/* int getline(char **lineptr, size_t *n, FILE *stream); */
+int getline(char **lineptr, size_t *n, FILE *stream);
 
 /**
  * main - entry point
