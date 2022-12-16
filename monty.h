@@ -48,6 +48,19 @@ void opcode(stack_t **stack, char *str, unsigned int line_number);
 #define INSTRUCTIONS { \
 		{"push", push},\
 		{"pall", pall},\
+		{"pint", pint},\
+		{"pop", pop},\
+		{"swap", swap},\
+		{"nop", nop},\
+		{"div", _div},\
+		{"mul", mul},\
+		{"add", add},\
+		{"sub", sub},\
+		{"mod", mod},\
+		{"pchar", pchar},\
+		{"pstr", pstr},\
+		{"rotl", rotl},\
+		{"rotr", rotr},\
 		{NULL, NULL} \
 	}
 
@@ -73,5 +86,18 @@ int isnumber(char *str);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int lnum);
+void swap(stack_t **stack, unsigned int lnum);
+void pop(stack_t **stack, unsigned int lnum);
+void nop(stack_t **stack, unsigned int lnum);
+void _div(stack_t **stack, unsigned int lnum);
+void add(stack_t **stack, unsigned int lnum);
+void sub(stack_t **stack, unsigned int lnum);
+void mul(stack_t **stack, unsigned int lnum);
+void mod(stack_t **stack, unsigned int lnum);
+void pchar(stack_t **stack, unsigned int lnum);
+void pstr(stack_t **stack, unsigned int lnum);
+void rotl(stack_t **stack, unsigned int lnum);
+void rotr(stack_t **stack, unsigned int lnum);
 
 #endif /* MONTY_H */
