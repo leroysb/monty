@@ -1,9 +1,8 @@
+#include <stdio.h>
 #include "monty.h"
 
 /**
  * error_usage - prints usage message and exits
- *
- * Return: nothing
  */
 void error_usage(void)
 {
@@ -14,8 +13,6 @@ void error_usage(void)
 /**
  * file_error - prints file error message and exits
  * @argv: argv given by main
- *
- * Return: nothing
  */
 void file_error(char *argv)
 {
@@ -24,14 +21,11 @@ void file_error(char *argv)
 }
 
 int status = 0;
-int getline(char **lineptr, size_t *n, FILE *stream);
 
 /**
  * main - entry point
  * @argv: list of arguments passed to our program
  * @argc: amount of args
- *
- * Return: nothing
  */
 int main(int argc, char **argv)
 {
@@ -41,6 +35,8 @@ int main(int argc, char **argv)
 	char *str = NULL;
 	stack_t *stack = NULL;
 	unsigned int count = 1;
+
+	int getline(char **buffer, size_t *buf_len, FILE *file);
 
 	global.data_struct = 1;
 	if (argc != 2)
@@ -75,3 +71,4 @@ int main(int argc, char **argv)
 	fclose(file);
 	exit(status);
 }
+

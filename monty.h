@@ -34,7 +34,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int lnum);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 #define INSTRUCTIONS { \
@@ -59,6 +59,8 @@ help global;
 
 extern int status;
 
+void opcode(stack_t **stack, char *str, unsigned int line_number);
+
 /* opcode_utils int isnumber(char *str); */
 int is_digit(char *string);
 
@@ -67,9 +69,9 @@ stack_t *queue_node(stack_t **stack, const int n);
 stack_t *add_node(stack_t **stack, const int n);
 size_t print_stack(const stack_t *stack);
 void free_stack(stack_t *stack);
-void opcode(stack_t **stack, char *str, unsigned int lnum);
 
-void push(stack_t **stack, unsigned int lnum);
-void pall(stack_t **stack, unsigned int lnum);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
+

@@ -3,15 +3,15 @@
 /**
  * push - push element to stack
  * @stack: stack to be evaluated
- * @lnum: line number
+ * @line_number: line number
  */
-void push(stack_t **stack, unsigned int lnum)
+void push(stack_t **stack, unsigned int line_number)
 {
 	char *n = global.argument;
 
 	if ((is_digit(n)) == 0)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", lnum);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		status = EXIT_FAILURE;
 		return;
 	}
