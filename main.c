@@ -35,7 +35,6 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	unsigned int count = 1;
 
-	int getline(char **buffer, size_t *buf_len, FILE *file);
 	global.data_struct = 1;
 	if (argc != 2)
 		usage_error();

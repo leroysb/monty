@@ -23,6 +23,12 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+/* stack_utils */
+stack_t *queue_node(stack_t **stack, const int n);
+stack_t *add_node(stack_t **stack, const int n);
+size_t print_stack(const stack_t *stack);
+void free_stack(stack_t *stack);
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -36,6 +42,8 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void opcode(stack_t **stack, char *str, unsigned int line_number);
 
 #define INSTRUCTIONS { \
 		{"push", push},\
@@ -59,16 +67,8 @@ help global;
 
 extern int status;
 
-void opcode(stack_t **stack, char *str, unsigned int line_number);
-
 /* opcode_utils int isnumber(char *str); */
 int is_digit(char *string);
-
-/* stack_utils */
-stack_t *queue_node(stack_t **stack, const int n);
-stack_t *add_node(stack_t **stack, const int n);
-size_t print_stack(const stack_t *stack);
-void free_stack(stack_t *stack);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
