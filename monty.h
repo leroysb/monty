@@ -67,8 +67,9 @@ help global;
 
 extern int status;
 
-/* opcode_utils int isnumber(char *str); */
+/* opcode_utils */
 int is_digit(char *string);
+int isnumber(char *str);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
