@@ -54,6 +54,11 @@ int main(int argc, char **argv)
 			continue;
 		}
 		str = strtok(buffer, " \t\n");
+		if (!str || *str == '#')
+		{
+			count++;
+			continue;
+		}
 		global.argument = strtok(NULL, " \t\n");
 		opcode(&stack, str, count);
 		count++;
