@@ -73,5 +73,9 @@ void free_stack(stack_t *stack);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 
+void error_usage(void);
+void file_error(char *argv);
+int main(int argc, char **argv);
+
 #endif /* MONTY_H */
 
