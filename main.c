@@ -1,10 +1,11 @@
-#include <stdio.h>
 #include "monty.h"
 
+int status = 0;
+
 /**
- * error_usage - prints usage message and exits
+ * usage_error - prints usage message and exits
  */
-void error_usage(void)
+void usage_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
@@ -19,8 +20,6 @@ void file_error(char *argv)
 	fprintf(stderr, "Error: Can't open file %s\n", argv);
 	exit(EXIT_FAILURE);
 }
-
-int status = 0;
 
 /**
  * main - entry point
@@ -37,10 +36,9 @@ int main(int argc, char **argv)
 	unsigned int count = 1;
 
 	int getline(char **buffer, size_t *buf_len, FILE *file);
-
 	global.data_struct = 1;
 	if (argc != 2)
-		error_usage();
+		usage_error();
 
 	file = fopen(argv[1], "r");
 
@@ -71,4 +69,3 @@ int main(int argc, char **argv)
 	fclose(file);
 	exit(status);
 }
-
