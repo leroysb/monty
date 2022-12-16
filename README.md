@@ -52,63 +52,102 @@ pall This is the end of our program. Monty is awesome!$
 
 ## Tasks
 ### 0. push, pall
-Implement the `push` and `pall` opcodes.
+Implement the `push` which pushes an element to the stack. and `pall` opcodes which prints all the values on the stack, starting from the top of the stack.
 
-**The push opcode**
-
-The opcode `push` pushes an element to the stack.
-* Usage: `push <int>`, where `<int>` is an integer
-* if `<int>` is not an integer or if there is no argument given to `push`, print the error message `L<line_number>: usage: push integer`, followed by a new line, and exit with the status `EXIT_FAILURE`, where is the line number in the file
-* You won’t have to deal with overflows. Use the `atoi` function
-
-**The pall opcode**
-
-The opcode `pall` prints all the values on the stack, starting from the top of the stack.
-* Usage `pall`
-* Format: see example
-* If the stack is empty, don’t print anything
+**File**: [push.c](./push.c), [pall.c](./pall.c)
 
 ### 1. pint
-Implement the `pint` opcode.
+Implement the `pint` opcode which prints the value at the top of the stack, followed by a new line.
 
-**The pint opcode**
-
-The opcode `pint` prints the value at the top of the stack, followed by a new line.
-* Usage: `pint`
-* If the stack is empty, print the error message `L<line_number>: can't pint, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
+**File**: [pint.c](./pint.c)
 
 ### 2. pop
-Implement the `pop` opcode.
+Implement the `pop` opcode which removes the top element of the stack.
 
-**The pop opcode**
-
-The opcode `pop` removes the top element of the stack.
-* Usage: pop
-* If the stack is empty, print the error message `L<line_number>: can't pop an empty stack`, followed by a new line, and exit with the status `EXIT_FAILURE`
+**File**: [pop.c](./pop.c)
 
 ### 3. swap
-Implement the swap opcode.
+Implement the `swap` opcode which swaps the top two elements of the stack.
 
-**The swap opcode**
-
-The opcode `swap` swaps the top two elements of the stack.
-* Usage: `swap`
-* If the stack contains less than two elements, print the error message `L<line_number>: can't swap, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
+**File**: [swap.c](./swap.c)
 
 ### 4. add
-Implement the `add` opcode.
+Implement the `add` opcode which adds the top two elements of the stack.
 
-**The add opcode**
-
-The opcode `add` adds the top two elements of the stack.
-* Usage: `add`
-* If the stack contains less than two elements, print the error message `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
-* The result is stored in the second top element of the stack, and the top element is removed, so that at the end: The top element of the stack contains the result, The stack is one element shorter.
+**File**: [add.c](./add.c)
 
 ### 5. nop
-Implement the `nop` opcode.
+Implement the `nop` opcode that doesn’t do anything.
 
-**The nop opcode**
+**File**: [nop.c](./nop.c)
 
-The opcode `nop` doesn’t do anything.
-* Usage: `nop`
+### 6. sub
+Implement the `sub` opcode that subtracts the top element of the stack from the second top element of the stack.
+
+**File**: [sub.c](./sub.c)
+
+### 7. div
+Implement the `div` opcode that divides the second top element of the stack by the top element of the stack.
+
+**File**: [div.c](./div.c)
+
+### 8. mul
+Implement the `mul` opcode that multiplies the second top element of the stack with the top element of the stack.
+
+**File**: [mul.c](./mul.c)
+
+### 9. mod
+Implement the `mod` opcode that computes the rest of the division of the second top element of the stack by the top element of the stack.
+
+**File**: [mod.c](./mod.c)
+
+### 10. comments
+Every good language comes with the capability of commenting. When the first non-space character of a line is #, treat this line as a comment (don’t do anything).
+
+### 11. pchar
+Implement the `pchar` opcode that prints the char at the top of the stack, followed by a new line.
+
+**File**: [pchar.c](./pchar.c)
+
+### 12. pstr
+Implement the `pstr` opcode prints the string starting at the top of the stack, followed by a new line
+
+**File**: [pstr.c](./pstr.c)
+
+### 13. rotl
+Implement the `rotl` opcode that rotates the stack to the top.
+
+**File**: [rotl.c](./rotl.c)
+
+### 14. rotr
+Implement the `rotr` opcode that rotates the stack to the bottom.
+
+**File**: [rotr.c](./rotr.c)
+
+### 15. stack, queue
+Implement the `stack` opcode that sets the format of the data to a stack (LIFO) the default behavior of the program, and the `queue` opcode that sets the format of the data to a queue (FIFO).
+
+### 16. Brainf*ck
+Write a Brainf*ck script that prints `School`, followed by a new line.
+* All your Brainf*ck files should be stored inside the bf sub directory
+* You can install the bf interpreter to test your code: `sudo apt-get install bf`
+* Read: [Brainf*ck](https://en.wikipedia.org/wiki/Brainfuck)
+
+**File**: [1000-school.bf](./1000-school.bf)
+
+### 17. Add two digits (Brainf*ck)
+Reads two digits from stdin, adds them, and print the result
+* The total of the two digits with be one digit-long (<10)
+
+**File**: [1001-add.bf](./1001-add.bf)
+
+### 18. Multiplication (Brainf*ck)
+Reads two digits from stdin, multiplies them, and print the result
+* The result of the multiplication will be one digit-long (<10)
+
+**File**: [1002-mul.bf](./1002-mul.bf)
+
+### 19. Multiplication level up (Brainf*ck)
+Reads the two digits from stdin, multiply them, and print the result, followed by a new line
+
+**File**: [1003-mul.bf](./1003-mul.bf)
