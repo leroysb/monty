@@ -2,7 +2,7 @@
 
 /**
  * opcode - runs builtins
- * @stack: stack given by main
+ * @stack: stack to be evaluated
  * @str: string to compare
  * @lnum: line number
  */
@@ -12,23 +12,12 @@ void opcode(stack_t **stack, char *str, unsigned int lnum)
 
 	instruction_t op[] = INSTRUCTIONS;
 
-	if (!strcmp(str, "stack"))
-	{
-		global.data_struct = 1;
-		return;
-	}
-	if (!strcmp(str, "queue"))
-	{
-		global.data_struct = 0;
-		return;
-	}
-
 	while (op[i].opcode)
 	{
 		if (strcmp(op[i].opcode, str) == 0)
 		{
 			op[i].f(stack, lnum);
-			return; /* if we found a match, run the function */
+			return;
 		}
 		i++;
 	}
