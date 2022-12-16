@@ -1,13 +1,12 @@
 #include "monty.h"
 
 /**
- * pall - prints all stack elements
- * @stack: stack given by main
+ * pall - prints all stack values
+ * @stack: stack to be evaluated
  * @lnum: line number
- *
- * Return: void
  */
 void pall(stack_t **stack, unsigned int lnum __attribute__((unused)))
 {
 	print_stack(*stack);
 }
+

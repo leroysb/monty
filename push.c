@@ -2,10 +2,8 @@
 
 /**
  * push - push element to stack
- * @stack: stack given by main
+ * @stack: stack to be evaluated
  * @lnum: line number
- *
- * Return: void
  */
 void push(stack_t **stack, unsigned int lnum)
 {
@@ -22,16 +20,17 @@ void push(stack_t **stack, unsigned int lnum)
 	{
 		if (!add_node(stack, atoi(global.argument)))
 		{
-			return;
 			status = EXIT_FAILURE;
+			return;
 		}
 	}
 	else
 	{
 		if (!queue_node(stack, atoi(global.argument)))
 		{
-			return;
 			status = EXIT_FAILURE;
+			return;
 		}
 	}
 }
+

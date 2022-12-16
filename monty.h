@@ -59,11 +59,10 @@ help global;
 
 extern int status;
 
-/* utils2 */
+/* opcode_utils int isnumber(char *str); */
 int is_digit(char *string);
-int isnumber(char *str);
 
-/* utils */
+/* stack_utils */
 stack_t *queue_node(stack_t **stack, const int n);
 stack_t *add_node(stack_t **stack, const int n);
 size_t print_stack(const stack_t *stack);
@@ -72,6 +71,5 @@ void opcode(stack_t **stack, char *str, unsigned int lnum);
 
 void push(stack_t **stack, unsigned int lnum);
 void pall(stack_t **stack, unsigned int lnum);
-
 
 #endif /* MONTY_H */

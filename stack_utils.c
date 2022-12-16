@@ -79,16 +79,16 @@ stack_t *add_node(stack_t **stack, const int n)
  */
 size_t print_stack(const stack_t *stack)
 {
-	size_t elem = 0;
+	size_t num = 0;
 
 	while (stack)
 	{
 		printf("%d\n", stack->n);
 		stack = stack->next;
-		elem++;
+		num++;
 	}
 
-	return (elem);
+	return (num);
 }
 
 /**
